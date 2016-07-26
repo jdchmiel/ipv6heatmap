@@ -1,0 +1,6 @@
+[
+{{range .point}} {{.Lat}} ,{{.Lon}} {{end}}
+
+]
+
+why this brokenz?

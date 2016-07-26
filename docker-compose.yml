@@ -1,0 +1,33 @@
+version: "2"
+
+services:
+
+#  redis:
+#    image: redis:3.0-alpine
+#    networks:
+#      - heatmap
+
+  db:
+    image: ip2location/mysql
+    networks:
+      - heatmap
+    ports:
+      - "3306:3306"
+    env_file:
+      - environment.env
+
+  golang:
+    build:
+        dockerfile: ipv6heat_golang_dockerfile
+        context: ./
+    networks:
+      - heatmap
+    ports: 
+      - "8080:8080"
+    volumes:
+      - ./go:/usr/src/myapp
+    command: go run /usr/src/myapp/hello.go
+
+networks:
+  heatmap:
+    driver: bridge
