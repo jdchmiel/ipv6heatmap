@@ -33,3 +33,16 @@ Known bugs:
 - hard coded 10k limit to the points returned vs a more designed approach as to which points to return.
 
 
+
+Future performance ideas:
+- protocol buffers
+- docker image of ipv6 data has data type double - could redo db with smaller type
+- could convert type in Go from double to less precision than fleas on a dog(http://stackoverflow.com/questions/159255/what-is-the-ideal-data-type-to-use-when-storing-latitude-longitudes-in-a-mysql)
+- transfer over sockets instead of ajax request might be tiny improvement
+- add browser caching on a grid of tiles and only request tile(s) needed for view changes like the map images are done
+- learn IndexedDB and store the whole DB locally (no IE, not sure allocation limits)
+
+# A note on the go/src and go/pkg directories:
+These directories are not really a part of this project.  The dockerfile adds them when the image is first built.
+I added them here in my local machine so that PHPstorm would know of them and work appropriately. TODO add them to
+.gitignore and remove from repo to clean it up a bit.
