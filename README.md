@@ -24,4 +24,12 @@ If you chose port 80 and were running this on your localmachine you would use
 You are free to copy / distribute / do whatever you want with this, no support or guarantee of any nature is implied.
 
 
+Known bugs:
+- the json encoding is terribly inefficient
+- wrong scope for heat var, re adds the same points when the map is only shifted a tiny bit, needs to clear map before adding points.
+- no design / styling / css at all yet
+- no data tweaking, still using the raw db dumb, with only the Latitude column indexed.
+- - no zoom level support
+- hard coded 10k limit to the points returned vs a more designed approach as to which points to return.
+
 
